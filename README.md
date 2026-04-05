@@ -29,9 +29,9 @@ This fork, maintained by **FTC Team 19859**, builds on the original Panels proje
 - **Responsive layout** — Grid min-width now uses `clamp()` for fluid scaling on any screen size (1040 px → 1320 px range), eliminating the need to zoom in on standard laptop screens.
 - **Spacing system** — Introduced a consistent spacing scale (`--space-1` through `--space-5`) and border-radius tokens (`--radius-sm`, `--radius-md`, `--radius-lg`) for uniform visual rhythm across every component.
 - **Larger controls** — Tab min-height raised to `2rem`; drag/resize/options icon buttons enlarged to `2rem × 2rem`; plugin button grid increased from 32 px → 42 px. Easier to click during competition.
-- **Better typography** — Base font size scales responsively with `clamp(14px, 0.17vw + 13px, 16px)`; headings use fluid `clamp()` sizing; line-height improved to 1.4+ for readability at 100 % zoom.
+- **Better typography** — Base font size scales responsively with `clamp(14px, 0.17vw + 13px, 16px)`; headings use fluid `clamp()` sizing; line-height improved to 1.4+ for readability at 100% zoom.
 - **Visual depth** — Consistent box shadows and borders added to panels and widgets for clear visual hierarchy.
-- **Topbar polish** — Height increased from 64 px → 74 px; larger icon buttons; status indicator dot; improved overlay positioning.
+- **Topbar polish** — Height increased from 64px → 74px; larger icon buttons; status indicator dot; improved overlay positioning.
 - **Modal / overlay improvements** — Overlays respect the viewport (`min-width: min(Xpx, calc(100vw - Ypx))`); dialogs fit standard laptop screens without scrolling.
 - **19 files updated** — All changes are presentation-only; no backend logic, data flow, chart behaviour, or plugin architecture was altered.
 
