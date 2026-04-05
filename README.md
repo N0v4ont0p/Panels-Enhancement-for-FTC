@@ -5,6 +5,8 @@
 **Panels** is an all-in-one toolbox for your FTC robot, developed by [**Lazar**](https://bylazar.com) from team **19234 ByteForce**.  
 It provides a powerful set of features with minimal boilerplate, using **Kotlin** for cleaner syntax (also works in **Java**).
 
+> **Enhancement** – This repository is an enhanced fork maintained by **FTC Team 19859**.
+
 ![dashboard](./docs/static/all-plugins.png)
 
 ## Panels 1.0: Built on Plugins
@@ -34,3 +36,7 @@ Read the full [**docs**](https://panels.bylazar.com).
 ---
 
 Stay tuned for more features as Panels evolves!
+
+---
+
+*Enhancements by **FTC Team 19859**.*
