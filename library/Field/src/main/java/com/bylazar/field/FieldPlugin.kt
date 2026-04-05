@@ -1,0 +1,76 @@
+package com.bylazar.field
+
+import android.content.Context
+import com.bylazar.panels.Panels
+import com.bylazar.panels.plugins.BasePluginConfig
+import com.bylazar.panels.plugins.Plugin
+import com.bylazar.panels.server.Socket
+import com.qualcomm.ftccommon.FtcEventLoop
+import com.qualcomm.robotcore.eventloop.opmode.OpMode
+import com.qualcomm.robotcore.eventloop.opmode.OpModeManagerImpl
+
+open class FieldPluginConfig : BasePluginConfig() {
+    @Transient
+    open var canvasUpdateInterval = 100L
+    @Transient
+    open var defaultBg: ImagePreset = PanelsField.images.DECODE.DARK
+    @Transient
+    open var extraPresets: List<FieldPresetParams> = listOf()
+}
+
+object Plugin : Plugin<FieldPluginConfig>(FieldPluginConfig()) {
+    var manager = FieldManager()
+
+    override fun onNewClient(client: Socket.ClientSocket) {
+        sendClient(client, "canvasPacket", manager.lastCanvas)
+        if (manager.images.isNotEmpty()) sendClient(client, "canvasImages", manager.images)
+
+        val combinedPresets = FieldPresets.allPresets + config.extraPresets
+
+        sendClient(client, "canvasPresets", combinedPresets)
+
+        log("Images length: ${manager.images.keys.size}")
+    }
+
+    override fun onMessage(client: Socket.ClientSocket, type: String, data: Any?) {
+        log("Got message of type $type with data $data")
+    }
+
+    override fun onRegister(
+        panelsInstance: Panels,
+        context: Context
+    ) {
+        manager.config = config
+        manager.init()
+        manager.sendCanvas = { canvas -> send("canvasPacket", canvas) }
+        manager.sendImages = { images -> if (images.isNotEmpty()) send("canvasImages", images) }
+
+        log("Images length: ${manager.images.keys.size}")
+
+        send("canvasPacket", manager.lastCanvas)
+        if (manager.images.isNotEmpty()) send("canvasImages", manager.images)
+    }
+
+    override fun onAttachEventLoop(eventLoop: FtcEventLoop) {
+    }
+
+    override fun onOpModeManager(o: OpModeManagerImpl) {
+    }
+
+    override fun onOpModePreInit(opMode: OpMode) {
+        manager.setOffsets(PanelsField.presets.PANELS)
+    }
+
+    override fun onOpModePreStart(opMode: OpMode) {
+    }
+
+    override fun onOpModePostStop(opMode: OpMode) {
+    }
+
+
+    override fun onEnablePanels() {
+    }
+
+    override fun onDisablePanels() {
+    }
+}

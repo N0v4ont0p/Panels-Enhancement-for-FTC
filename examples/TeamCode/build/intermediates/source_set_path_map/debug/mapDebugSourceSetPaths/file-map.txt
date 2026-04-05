@@ -1,0 +1,63 @@
+org.firstinspires.ftc.teamcode.TeamCode-lifecycle-viewmodel-2.6.2-0 /Users/georgehu/.gradle/caches/8.9/transforms/0219ec6c4159734b2c73a6ecb2e2eeec/transformed/lifecycle-viewmodel-2.6.2/res
+org.firstinspires.ftc.teamcode.TeamCode-Blocks-11.0.0-1 /Users/georgehu/.gradle/caches/8.9/transforms/0450c5601893f5fc0d3c40d4d5854c1d/transformed/Blocks-11.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-activity-1.8.0-2 /Users/georgehu/.gradle/caches/8.9/transforms/19ccd425fef2c9f8dd228bec51988fd3/transformed/activity-1.8.0/res
+org.firstinspires.ftc.teamcode.TeamCode-constraintlayout-2.0.1-3 /Users/georgehu/.gradle/caches/8.9/transforms/2328646476222bf1275670ccce6e69d4/transformed/constraintlayout-2.0.1/res
+org.firstinspires.ftc.teamcode.TeamCode-profileinstaller-1.3.0-4 /Users/georgehu/.gradle/caches/8.9/transforms/236dcb2ae4edfd651681189c278de026/transformed/profileinstaller-1.3.0/res
+org.firstinspires.ftc.teamcode.TeamCode-core-1.13.1-5 /Users/georgehu/.gradle/caches/8.9/transforms/246fd31a7210e70d9d5f516675b3720f/transformed/core-1.13.1/res
+org.firstinspires.ftc.teamcode.TeamCode-transition-1.5.0-6 /Users/georgehu/.gradle/caches/8.9/transforms/3f94c130a179ee9610b7f715448633d2/transformed/transition-1.5.0/res
+org.firstinspires.ftc.teamcode.TeamCode-opencv-repackaged-bundled-dylibs-4.10.0-A-7 /Users/georgehu/.gradle/caches/8.9/transforms/40566fe9c0b7f6178a57bd88a8be8f99/transformed/opencv-repackaged-bundled-dylibs-4.10.0-A/res
+org.firstinspires.ftc.teamcode.TeamCode-drawerlayout-1.1.1-8 /Users/georgehu/.gradle/caches/8.9/transforms/4284f9f79d98394d8f7a135068893620/transformed/drawerlayout-1.1.1/res
+org.firstinspires.ftc.teamcode.TeamCode-lifecycle-livedata-core-2.6.2-9 /Users/georgehu/.gradle/caches/8.9/transforms/5369483676249ef1b2cfec2eccc6e993/transformed/lifecycle-livedata-core-2.6.2/res
+org.firstinspires.ftc.teamcode.TeamCode-viewpager2-1.0.0-10 /Users/georgehu/.gradle/caches/8.9/transforms/57d0320a2776effa665b88c8193a497e/transformed/viewpager2-1.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-FtcCommon-11.0.0-11 /Users/georgehu/.gradle/caches/8.9/transforms/61685992580ef46d26e5692360311ae7/transformed/FtcCommon-11.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-appcompat-resources-1.6.1-12 /Users/georgehu/.gradle/caches/8.9/transforms/658b3f0442005b651ada17176bab32f3/transformed/appcompat-resources-1.6.1/res
+org.firstinspires.ftc.teamcode.TeamCode-emoji2-views-helper-1.2.0-13 /Users/georgehu/.gradle/caches/8.9/transforms/69da51d1a90fef892293422888063636/transformed/emoji2-views-helper-1.2.0/res
+org.firstinspires.ftc.teamcode.TeamCode-material-1.12.0-14 /Users/georgehu/.gradle/caches/8.9/transforms/6b77b94bd1760ab355f14e4d4611ab52/transformed/material-1.12.0/res
+org.firstinspires.ftc.teamcode.TeamCode-RobotCore-11.0.0-15 /Users/georgehu/.gradle/caches/8.9/transforms/702825e7054c4a902e2a2ce3f715be3c/transformed/RobotCore-11.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-cardview-1.0.0-16 /Users/georgehu/.gradle/caches/8.9/transforms/76496cfc723209c85e3e3d4c91a9ca33/transformed/cardview-1.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-Inspection-11.0.0-17 /Users/georgehu/.gradle/caches/8.9/transforms/766f53b84f3ba4bc446f0fe2b3b5c455/transformed/Inspection-11.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-recyclerview-1.1.0-18 /Users/georgehu/.gradle/caches/8.9/transforms/7fc94053ab57f2bc5fecc24e9e569a71/transformed/recyclerview-1.1.0/res
+org.firstinspires.ftc.teamcode.TeamCode-lifecycle-runtime-2.6.2-19 /Users/georgehu/.gradle/caches/8.9/transforms/89ef1b71dc0869b4e6322f7bf8b09c0b/transformed/lifecycle-runtime-2.6.2/res
+org.firstinspires.ftc.teamcode.TeamCode-lifecycle-viewmodel-savedstate-2.6.2-20 /Users/georgehu/.gradle/caches/8.9/transforms/8c1b96d218d37cd30ba31bcb7ebb3bf7/transformed/lifecycle-viewmodel-savedstate-2.6.2/res
+org.firstinspires.ftc.teamcode.TeamCode-core-ktx-1.13.1-21 /Users/georgehu/.gradle/caches/8.9/transforms/a04299dc723596126a7f7910264c3d61/transformed/core-ktx-1.13.1/res
+org.firstinspires.ftc.teamcode.TeamCode-coordinatorlayout-1.1.0-22 /Users/georgehu/.gradle/caches/8.9/transforms/a1c309b56164f014d7cd3ba7b16ae4b1/transformed/coordinatorlayout-1.1.0/res
+org.firstinspires.ftc.teamcode.TeamCode-appcompat-1.6.1-23 /Users/georgehu/.gradle/caches/8.9/transforms/b0855de71ea9149d847c9ad3e62cda99/transformed/appcompat-1.6.1/res
+org.firstinspires.ftc.teamcode.TeamCode-fragment-1.3.6-24 /Users/georgehu/.gradle/caches/8.9/transforms/b2545b51cf28829d00b3a472892c69d3/transformed/fragment-1.3.6/res
+org.firstinspires.ftc.teamcode.TeamCode-Hardware-11.0.0-25 /Users/georgehu/.gradle/caches/8.9/transforms/b7c173a5e72b6cc35753f80768565410/transformed/Hardware-11.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-savedstate-1.2.1-26 /Users/georgehu/.gradle/caches/8.9/transforms/bac38e4f4722c814d790aa6d204edd3b/transformed/savedstate-1.2.1/res
+org.firstinspires.ftc.teamcode.TeamCode-annotation-experimental-1.4.0-27 /Users/georgehu/.gradle/caches/8.9/transforms/bf595c31c613069e122c89af0f62ebd3/transformed/annotation-experimental-1.4.0/res
+org.firstinspires.ftc.teamcode.TeamCode-apriltag-2.1.0-28 /Users/georgehu/.gradle/caches/8.9/transforms/c0508108340e0c027b1fd5f703e2e429/transformed/apriltag-2.1.0/res
+org.firstinspires.ftc.teamcode.TeamCode-lifecycle-livedata-2.6.2-29 /Users/georgehu/.gradle/caches/8.9/transforms/c625ca30ec4bc0bd492e71ebdebd9ec4/transformed/lifecycle-livedata-2.6.2/res
+org.firstinspires.ftc.teamcode.TeamCode-OnBotJava-11.0.0-30 /Users/georgehu/.gradle/caches/8.9/transforms/cafff9dc6b1a0bd45c5f4005bfd6ac85/transformed/OnBotJava-11.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-core-runtime-2.2.0-31 /Users/georgehu/.gradle/caches/8.9/transforms/d4893b150c09c1d224943c9714e0eaef/transformed/core-runtime-2.2.0/res
+org.firstinspires.ftc.teamcode.TeamCode-startup-runtime-1.1.1-32 /Users/georgehu/.gradle/caches/8.9/transforms/d730c57bdb899dc796933bb1f3212b0c/transformed/startup-runtime-1.1.1/res
+org.firstinspires.ftc.teamcode.TeamCode-lifecycle-process-2.6.2-33 /Users/georgehu/.gradle/caches/8.9/transforms/d91104e7db3d1577317649e04e6913bb/transformed/lifecycle-process-2.6.2/res
+org.firstinspires.ftc.teamcode.TeamCode-RobotServer-11.0.0-34 /Users/georgehu/.gradle/caches/8.9/transforms/efd50d9e1cc1877b90e461c0ed0a4040/transformed/RobotServer-11.0.0/res
+org.firstinspires.ftc.teamcode.TeamCode-zxing-android-embedded-4.3.0-35 /Users/georgehu/.gradle/caches/8.9/transforms/fa30a26b9feb6b0d0b02bc7b45d5a4fd/transformed/zxing-android-embedded-4.3.0/res
+org.firstinspires.ftc.teamcode.TeamCode-emoji2-1.2.0-36 /Users/georgehu/.gradle/caches/8.9/transforms/fdf37c8c04a2f02161786fa67c5d9b3f/transformed/emoji2-1.2.0/res
+org.firstinspires.ftc.teamcode.TeamCode-debug-37 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/examples/FtcRobotController/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-pngs-38 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/examples/TeamCode/build/generated/res/pngs/debug
+org.firstinspires.ftc.teamcode.TeamCode-resValues-39 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/examples/TeamCode/build/generated/res/resValues/debug
+org.firstinspires.ftc.teamcode.TeamCode-mergeDebugResources-40 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/examples/TeamCode/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+org.firstinspires.ftc.teamcode.TeamCode-mergeDebugResources-41 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/examples/TeamCode/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+org.firstinspires.ftc.teamcode.TeamCode-debug-42 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/examples/TeamCode/build/intermediates/merged_res/debug/mergeDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-43 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/examples/TeamCode/src/debug/res
+org.firstinspires.ftc.teamcode.TeamCode-main-44 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/examples/TeamCode/src/main/res
+org.firstinspires.ftc.teamcode.TeamCode-debug-45 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Battery/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-46 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/CameraStream/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-47 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Capture/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-48 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Configurables/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-49 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Docs/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-50 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/ExamplePlugin/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-51 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Field/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-52 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/FullPanels/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-53 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Gamepad/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-54 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Graph/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-55 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Lights/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-56 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/LimelightProxy/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-57 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/OpModeControl/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-58 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Panels/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-59 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Pinger/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-60 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Telemetry/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-61 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Themes/build/intermediates/packaged_res/debug/packageDebugResources
+org.firstinspires.ftc.teamcode.TeamCode-debug-62 /Volumes/George USB/code/vscode projects/ftcontrol-panels-main/library/Utils/build/intermediates/packaged_res/debug/packageDebugResources
