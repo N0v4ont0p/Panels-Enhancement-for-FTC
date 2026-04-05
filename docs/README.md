@@ -1,38 +1,40 @@
-# sv
+# Team 19859 Docs Site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This folder contains the public project site for FTC Team 19859's fork of Panels.
 
-## Creating a project
+The site explains:
 
-If you're seeing this, you've probably already done this step. Congrats!
+- what this fork is and why it exists
+- improvements over upstream Panels
+- real FTC deployment workflow vs standalone mock/demo workflow
+- attribution to the original creator/project
 
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Local Development
 
 ```sh
+cd docs
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+## Build + Preview
 
 ```sh
+cd docs
+npm install
 npm run build
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## Render Deployment (Recommended)
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Use a Static Site service with:
+
+- Root Directory: `docs`
+- Build Command: `npm install && npm run build`
+- Publish Directory: `build`
+
+## Notes
+
+- This docs site is intentionally separate from the FTC runtime code in `library/` and `examples/`.
+- For frontend-only testing without a robot, use `../mock-demo`.

@@ -34,3 +34,49 @@ Read the full [**docs**](https://panels.bylazar.com).
 ---
 
 Stay tuned for more features as Panels evolves!
+
+---
+
+## FTC Team 19859 Fork Additions
+
+This repository now contains two clearly separated frontend targets:
+
+- **Production FTC runtime** (original behavior preserved):
+	- `library/`
+	- `examples/`
+- **Standalone frontend mock environment** (no robot required):
+	- `mock-demo/`
+
+The mock demo is isolated and does **not** replace the FTC robot-side deployment flow.
+
+### Run the standalone mock demo
+
+```sh
+cd mock-demo
+npm install
+npm run dev
+```
+
+### Run the docs site
+
+```sh
+cd docs
+npm install
+npm run dev
+```
+
+### Render deployment quick settings
+
+- **Docs site**
+	- Root Directory: `docs`
+	- Build Command: `npm install && npm run build`
+	- Publish Directory: `build`
+- **Mock demo**
+	- Root Directory: `mock-demo`
+	- Build Command: `npm install && npm run build`
+	- Publish Directory: `dist`
+
+### Attribution
+
+Panels is originally created by **Lazar** from team **19234 ByteForce**.
+This fork by **FTC Team 19859** adds workflow and usability enhancements while preserving credit and compatibility.
