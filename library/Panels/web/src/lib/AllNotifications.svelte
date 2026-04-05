@@ -32,6 +32,7 @@
   .notif {
     width: 100%;
     padding-block: var(--space-2);
+    padding-inline: var(--space-1);
   }
   p {
     max-width: 100%;
@@ -39,7 +40,7 @@
     line-height: 1.4;
   }
   .notLast {
-    border-bottom: 1px solid var(--bgLight);
+    border-bottom: 1px solid color-mix(in srgb, var(--border-subtle) 65%, transparent);
   }
   p.center {
     text-align: center;

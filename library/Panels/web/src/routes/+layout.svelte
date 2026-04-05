@@ -41,4 +41,10 @@
     max-width: var(--console-max-width);
     margin: 0 auto;
   }
+
+  @supports not (height: 100dvh) {
+    section {
+      height: 100vh;
+    }
+  }
 </style>

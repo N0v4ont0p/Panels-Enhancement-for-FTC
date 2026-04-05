@@ -15,16 +15,18 @@
 <style>
   div {
     position: absolute;
-    background-color: var(--bgLight);
+    background-color: color-mix(in srgb, var(--primary) 20%, var(--bgLight) 80%);
     color: inherit;
-    border-radius: 1rem;
-    border: 1px solid var(--bgLight);
+    border-radius: var(--radius-md);
+    border: 1px solid color-mix(in srgb, var(--primary) 40%, transparent);
     top: calc(var(--y) * var(--height));
     left: calc(var(--x) * var(--width));
     height: calc(var(--height) * var(--h));
     width: calc(var(--width) * var(--w));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   }
   div.invalid {
-    background-color: red;
+    background-color: rgba(230, 0, 18, 0.32);
+    border-color: rgba(230, 0, 18, 0.8);
   }
 </style>

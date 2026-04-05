@@ -74,16 +74,22 @@
     margin: 0;
     padding: var(--space-2);
     border-radius: var(--radius-sm);
-    background-color: color-mix(in srgb, var(--bgDark) 70%, transparent);
+    background-color: color-mix(in srgb, var(--bgDark) 74%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 60%, transparent);
     overflow: auto;
   }
   h3 {
     margin: var(--space-4) var(--space-1) var(--space-2);
     font-size: clamp(1.1rem, 0.45vw + 0.95rem, 1.4rem);
+    color: color-mix(in srgb, var(--text) 94%, var(--accent-soft) 6%);
+    letter-spacing: 0.02em;
   }
   h4 {
     margin: 0;
     margin-bottom: var(--space-2);
     font-size: 1.03rem;
+  }
+  p {
+    color: var(--mutedText);
   }
 </style>

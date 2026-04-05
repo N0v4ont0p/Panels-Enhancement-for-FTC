@@ -88,5 +88,20 @@
     gap: var(--space-2);
     padding: var(--space-2);
     grid-template-columns: auto 32px;
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--bgRaised) 94%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, white 12%);
+    box-shadow: var(--shadow-md);
+  }
+
+  .options {
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 70%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color-mix(in srgb, var(--bgDark) 48%, transparent);
   }
 </style>

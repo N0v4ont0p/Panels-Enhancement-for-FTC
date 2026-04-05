@@ -138,12 +138,18 @@
     place-items: center;
     flex-direction: column;
     padding: var(--spacing);
+    border-radius: var(--radius-md);
+    border: 1px dashed color-mix(in srgb, var(--primary) 24%, transparent);
+    background-color: color-mix(in srgb, var(--bgDark) 28%, transparent);
   }
   .wrapper {
     overflow-x: auto;
     overflow-y: auto;
     height: 100%;
     padding: 0 var(--space-1) var(--space-1);
+    border-radius: var(--radius-lg);
+    background-color: color-mix(in srgb, var(--bgDark) 28%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 55%, transparent);
   }
   section {
     --spacing: 0.42rem;
@@ -156,5 +162,6 @@
     width: max(100%, var(--grid-min-width));
     height: calc(100% - 2 * var(--spacing));
     max-height: 100%;
+    border-radius: var(--radius-md);
   }
 </style>

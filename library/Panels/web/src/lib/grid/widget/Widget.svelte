@@ -95,23 +95,26 @@
   .content {
     position: relative;
     flex-grow: 1;
-    background-color: var(--bgMedium);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bgMedium) 94%, #121c2a 6%),
+      color-mix(in srgb, var(--bgMedium) 98%, #121c2a 2%)
+    );
     overflow: hidden;
 
     display: flex;
     flex-direction: column;
 
-    border: 1px solid #505151;
     border-radius: var(--radius-lg);
-    border: 1px solid color-mix(in srgb, var(--bgLight) 85%, white 15%);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, white 12%);
+    box-shadow: var(--shadow-md);
   }
   .content.invalid {
     border-color: #e60012;
-    box-shadow: 0 0 0 2px rgba(230, 0, 18, 0.3), 0 10px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 2px rgba(230, 0, 18, 0.3), var(--shadow-md);
   }
   .transparent {
-    opacity: 0.5;
+    opacity: 0.55;
   }
 
   section :global(h1),
@@ -126,7 +129,7 @@
   section :global(th),
   section :global(dt) {
     font-size: 0.88rem;
-    opacity: 0.82;
+    opacity: 0.88;
     letter-spacing: 0.015em;
   }
 
@@ -134,6 +137,7 @@
   section :global(dd),
   section :global(p) {
     line-height: 1.45;
+    color: color-mix(in srgb, var(--text) 94%, white 6%);
   }
 
   section :global(input),

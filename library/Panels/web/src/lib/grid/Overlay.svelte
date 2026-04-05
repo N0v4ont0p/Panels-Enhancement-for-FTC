@@ -60,7 +60,7 @@
     position: absolute;
     background-color: transparent;
     color: inherit;
-    border: 1px solid var(--bgLight);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 72%, transparent);
     top: calc(var(--y) * var(--height));
     left: calc(var(--x) * var(--width));
     height: calc(var(--height));
@@ -73,12 +73,11 @@
     font-weight: 600;
     cursor: crosshair;
     color: color-mix(in srgb, var(--text) 85%, var(--primary) 15%);
-    background-color: color-mix(in srgb, var(--bgMedium) 65%, transparent);
+    background-color: color-mix(in srgb, var(--bgMedium) 52%, transparent);
   }
   button:hover {
     border-color: var(--primary);
-    background-color: rgba(0, 91, 172, 0.14);
-    background-color: color-mix(in srgb, var(--primary) 14%, var(--bgMedium) 86%);
+    background-color: color-mix(in srgb, var(--primary) 18%, var(--bgMedium) 82%);
     color: #fff;
   }
   button:active {

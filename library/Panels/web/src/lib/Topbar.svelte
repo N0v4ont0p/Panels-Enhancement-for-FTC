@@ -29,12 +29,12 @@
   const url = first ? `/docs/${first}` : "/docs"
 </script>
 
-<nav>
-  <a href="/">
+<nav class="topbar">
+  <a href="/" class="brand" aria-label="Panels home">
     <Panels />
   </a>
 
-  <p>
+  <p class="connection">
     <span class="status-dot"></span>
     {global.isPrepared ? "Connected" : "Waiting"}
   </p>
@@ -42,14 +42,16 @@
   {#if global.isPrepared}
     <Navlets {manager} />
   {:else}
-    <section style="flex-grow: 1;"></section>
+    <section class="spacer"></section>
   {/if}
 
   <Overlay
     triggerStyle={"display: flex;justify-content: center;align-items: center;"}
   >
     {#snippet trigger({ isOpen })}
-      <Bell />
+      <button class="icon-btn" aria-label="Notifications">
+        <Bell />
+      </button>
     {/snippet}
     {#snippet overlay()}
       <div class="bell-menu">
@@ -64,7 +66,7 @@
     {/snippet}
   </Overlay>
 
-  <a href={url}>
+  <a href={url} class="icon-link" aria-label="Docs">
     <Docs />
   </a>
 
@@ -72,7 +74,9 @@
     triggerStyle={"display: flex;justify-content: center;align-items: center;"}
   >
     {#snippet trigger({ isOpen })}
-      <Presets />
+      <button class="icon-btn" aria-label="Presets">
+        <Presets />
+      </button>
     {/snippet}
     {#snippet overlay({ close }: { close: () => void })}
       <div class="presets-overlay">
@@ -197,7 +201,9 @@
     triggerStyle={"display: flex;justify-content: center;align-items: center;"}
   >
     {#snippet trigger({ isOpen })}
-      <Plugins />
+      <button class="icon-btn" aria-label="Plugins">
+        <Plugins />
+      </button>
     {/snippet}
     {#snippet overlay({ close }: { close: () => void })}
       <div class="plugins-overlay">
@@ -235,25 +241,59 @@
 </nav>
 
 <style>
+  .topbar {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bgMedium) 88%, #0d1622 12%),
+      color-mix(in srgb, var(--bgMedium) 94%, #0d1622 6%)
+    );
+    padding: 0 var(--space-3);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: var(--radius-lg);
+    margin: 0;
+
+    gap: var(--space-3);
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 74px;
+    min-height: 74px;
+    border: 1px solid #505151;
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 92%, white 8%);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  }
+  .spacer {
+    flex-grow: 1;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+  }
   h1 {
     margin: 0;
     margin-bottom: var(--space-2);
     font-size: clamp(1.15rem, 0.45vw + 1rem, 1.5rem);
   }
-  p {
+  .connection {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.42rem;
     white-space: nowrap;
-    opacity: 0.88;
+    opacity: 0.95;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
+    color: var(--mutedText);
   }
   .status-dot {
-    width: 0.58rem;
-    height: 0.58rem;
+    width: 0.55rem;
+    height: 0.55rem;
     border-radius: 50%;
     background-color: var(--primary);
     box-shadow: 0 0 0 0.15rem rgba(230, 0, 18, 0.35);
@@ -262,6 +302,31 @@
   a {
     color: inherit;
     text-decoration: none;
+  }
+  .icon-link,
+  .icon-btn {
+    width: 2.05rem;
+    height: 2.05rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    color: inherit;
+    background-color: transparent;
+    transition: background-color 120ms ease, border-color 120ms ease, transform 120ms ease;
+  }
+  .icon-btn {
+    cursor: pointer;
+  }
+  .icon-link:hover,
+  .icon-btn:hover {
+    background-color: color-mix(in srgb, var(--bgLight) 38%, transparent);
+    border-color: color-mix(in srgb, var(--primary) 44%, transparent);
+  }
+  .icon-link:active,
+  .icon-btn:active {
+    transform: translateY(1px);
   }
   .plugins-overlay {
     min-width: min(300px, calc(100vw - 2rem));
@@ -272,7 +337,9 @@
 
     padding: var(--space-3);
     border-radius: var(--radius-md);
-    border: 1px solid #505151;
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 90%, white 10%);
+    background: color-mix(in srgb, var(--bgRaised) 94%, transparent);
+    box-shadow: var(--shadow-md);
   }
   .presets-overlay {
     min-width: min(360px, calc(100vw - 2rem));
@@ -287,7 +354,9 @@
     padding: var(--space-3);
     gap: var(--space-2);
     border-radius: var(--radius-md);
-    border: 1px solid #505151;
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 90%, white 10%);
+    background: color-mix(in srgb, var(--bgRaised) 94%, transparent);
+    box-shadow: var(--shadow-md);
   }
   .preset {
     display: flex;
@@ -324,7 +393,9 @@
     min-width: min(340px, calc(100vw - 2rem));
     max-width: 460px;
     border-radius: var(--radius-md);
-    border: 1px solid #505151;
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 90%, white 10%);
+    background: color-mix(in srgb, var(--bgRaised) 94%, transparent);
+    box-shadow: var(--shadow-md);
   }
   .grid {
     margin-top: var(--space-2);
@@ -335,10 +406,10 @@
   }
 
   button.plugin {
-    background-color: transparent;
+    background-color: color-mix(in srgb, var(--bgDark) 50%, transparent);
     color: inherit;
     margin: 0;
-    border: 1px solid var(--bgLight);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 86%, white 14%);
     padding: var(--space-1);
     border-radius: 69vw;
     width: 42px;
@@ -348,36 +419,12 @@
     cursor: pointer;
   }
   button.plugin:hover:not(:disabled) {
-    border-color: #6b6b6b;
-    background-color: #4a4b4b;
     border-color: color-mix(in srgb, var(--primary) 35%, var(--bgLight));
-    background-color: color-mix(in srgb, var(--bgLight) 85%, white 15%);
-  }
-  nav {
-    background-color: var(--bgMedium);
-    padding: 0 var(--space-3);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-radius: var(--radius-lg);
-    margin: 0;
-
-    gap: var(--space-3);
-    max-width: 100%;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-    max-height: 74px;
-    min-height: 74px;
-    border: 1px solid #505151;
-    border: 1px solid color-mix(in srgb, var(--bgLight) 85%, white 15%);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+    background-color: color-mix(in srgb, var(--bgLight) 60%, #111f2f 40%);
   }
 
   @media (max-width: 1280px) {
-    nav {
+    .topbar {
       min-height: 68px;
       max-height: 68px;
       padding: 0 var(--space-2);

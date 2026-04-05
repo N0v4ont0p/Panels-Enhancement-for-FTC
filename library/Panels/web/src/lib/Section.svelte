@@ -11,14 +11,17 @@
 
 <style>
   section {
-    background-color: var(--bgMedium);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bgMedium) 92%, #111c2a 8%),
+      color-mix(in srgb, var(--bgMedium) 98%, #111c2a 2%)
+    );
     padding: var(--space-3);
     border-radius: var(--radius-lg);
     overflow: auto;
     position: relative;
-    border: 1px solid #505151;
-    border: 1px solid color-mix(in srgb, var(--bgLight) 85%, white 15%);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, white 12%);
+    box-shadow: var(--shadow-sm);
   }
   section.transparent {
     background-color: transparent;

@@ -1,55 +1,49 @@
-# Panels
+# Panels Enhancement for FTC (Team 19859)
 
 ![dashboard](./docs/static/homepage-panels.png)
 
-**Panels** is an all-in-one toolbox for your FTC robot, developed by [**Lazar**](https://bylazar.com) from team **19234 ByteForce**.  
-It provides a powerful set of features with minimal boilerplate, using **Kotlin** for cleaner syntax (also works in **Java**).
+This repository is FTC Team 19859's enhancement fork of Panels, focused on improving UI/UX quality, workflow clarity, and frontend testability while preserving real FTC runtime behavior.
 
 ![dashboard](./docs/static/all-plugins.png)
 
-## Panels 1.0: Built on Plugins
+## What This Fork Changes
 
-Panels is now entirely plugin-driven. Out of the box, you get all the essentials delivered as native plugins.
-Extend with custom plugins.
+This fork is intentionally feature-preserving and enhancement-focused.
 
-Build a Svelte frontend and Kotlin backend, hook into the full Panels UI, and use the JS utilities, components, and FTC SDK to quickly ship new features. Panels becomes your FTC app modding platform.
+- Comprehensive UI/UX redesign across core frontend surfaces.
+- Stronger design system consistency (spacing, hierarchy, readability, responsive polish).
+- Improved shell, topbar, widget chrome, overlays, chooser surfaces, plugin/docs views, and notifications UI.
+- Improved mock-demo experience for frontend iteration without robot hardware.
+- Clear documentation for real FTC runtime path vs standalone mock/demo path.
 
-Read the full [**docs**](https://panels.bylazar.com).
+## Feature Preservation Guarantee
 
----
+Major capabilities are intentionally preserved in this fork:
 
-## Panels Features
+- Graphs
+- Telemetry
+- Field view
+- Capture-related workflows
+- OpMode control
+- Configurables
+- Gamepad UI
+- Widgets/panels/plugin system
+- Layout interactions (tabs, resizing, grouping, template/preset operations)
 
-**Panels** includes:
+No intentional feature pruning has been performed as part of this enhancement fork.
 
-- **OpMode control** – Just like the Driver Hub.
-- **Real-time telemetry** – See all your robot data live.
-- **Field view** – A canvas-like interface for drawing on the field.
-- **Graph view** – A graphing tool for tuning and debugging.
-- **Capture mode** – Record and replay matches for debugging.
-- **Configurables** – Tune your robot in real time **without uploading code again**.
-- **Limelight Support** - Use your Limelight 3A without USB connection.
-- **Plugins** - Extend Panels using custom plugins.
+## Runtime Targets
 
----
+This repo contains two separate targets:
 
-Stay tuned for more features as Panels evolves!
+- Real FTC runtime path: `library/` + `examples/`
+- Standalone frontend testing/demo path: `mock-demo/`
 
----
+The mock demo is isolated and does not replace robot-side FTC deployment.
 
-## FTC Team 19859 Fork Additions
+## Local Development
 
-This repository now contains two clearly separated frontend targets:
-
-- **Production FTC runtime** (original behavior preserved):
-	- `library/`
-	- `examples/`
-- **Standalone frontend mock environment** (no robot required):
-	- `mock-demo/`
-
-The mock demo is isolated and does **not** replace the FTC robot-side deployment flow.
-
-### Run the standalone mock demo
+### Mock demo
 
 ```sh
 cd mock-demo
@@ -57,7 +51,7 @@ npm install
 npm run dev
 ```
 
-### Run the docs site
+### Docs site
 
 ```sh
 cd docs
@@ -65,18 +59,23 @@ npm install
 npm run dev
 ```
 
-### Render deployment quick settings
+## Render Deployment
 
-- **Docs site**
-	- Root Directory: `docs`
-	- Build Command: `npm install && npm run build`
-	- Publish Directory: `build`
-- **Mock demo**
-	- Root Directory: `mock-demo`
-	- Build Command: `npm install && npm run build`
-	- Publish Directory: `dist`
+### Docs site
 
-### Attribution
+- Root Directory: `docs`
+- Build Command: `npm install && npm run build`
+- Publish Directory: `build`
 
-Panels is originally created by **Lazar** from team **19234 ByteForce**.
-This fork by **FTC Team 19859** adds workflow and usability enhancements while preserving credit and compatibility.
+### Mock demo
+
+- Root Directory: `mock-demo`
+- Build Command: `npm install && npm run build`
+- Publish Directory: `dist`
+
+## Upstream Credit
+
+Original Panels project by Lazar (Team 19234 ByteForce):
+
+- https://bylazar.com
+- https://panels.bylazar.com

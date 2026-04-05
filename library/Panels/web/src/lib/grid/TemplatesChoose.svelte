@@ -60,13 +60,19 @@
   button.choose {
     all: unset;
     cursor: pointer;
-    background-color: var(--bgLight);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bgMedium) 90%, #111b2a 10%),
+      color-mix(in srgb, var(--bgMedium) 96%, #111b2a 4%)
+    );
     padding: var(--space-2);
     border-radius: var(--radius-md);
-    border: 1px solid color-mix(in srgb, var(--bgLight) 80%, white 20%);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 84%, white 16%);
+    box-shadow: var(--shadow-sm);
   }
   button.choose:hover:not(:disabled) {
     border-color: color-mix(in srgb, var(--primary) 35%, var(--bgLight));
+    transform: translateY(-1px);
   }
   button:disabled {
     opacity: 0.45;

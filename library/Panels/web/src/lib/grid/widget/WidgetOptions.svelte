@@ -87,6 +87,10 @@
     gap: var(--space-2);
     padding: var(--space-3);
     min-width: 220px;
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--bgRaised) 94%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, white 12%);
+    box-shadow: var(--shadow-md);
   }
   .icon {
     all: unset;
@@ -97,8 +101,12 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    color: color-mix(in srgb, var(--mutedText) 88%, white 12%);
   }
   .icon:hover {
-    background-color: color-mix(in srgb, var(--bgLight) 75%, white 25%);
+    background-color: color-mix(in srgb, var(--bgLight) 60%, transparent);
+    border-color: color-mix(in srgb, var(--primary) 36%, transparent);
+    color: var(--text);
   }
 </style>

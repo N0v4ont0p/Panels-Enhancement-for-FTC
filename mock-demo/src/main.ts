@@ -2,6 +2,9 @@ import "./styles.css"
 import { MockPanelsService, type ConnectionStatus, type Point } from "./mockData"
 
 const service = new MockPanelsService()
+let lastTick = performance.now()
+let liveMode = false
+let theme: "blue" | "red" = "blue"
 
 const app = document.querySelector<HTMLDivElement>("#app")
 if (!app) {
@@ -10,17 +13,35 @@ if (!app) {
 
 app.innerHTML = `
   <main class="shell">
-    <header class="topbar card">
-      <div>
-        <p class="eyebrow">FTC Team 19859</p>
-        <h1>Panels Mock Demo</h1>
-        <p class="subtle">Standalone UI sandbox for frontend testing without robot hardware.</p>
-      </div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Panels mock home">
+        <span class="brand-pill">P</span>
+        <div>
+          <p class="eyebrow">FTC Team 19859</p>
+          <h1>Panels Mock Runtime</h1>
+        </div>
+      </a>
       <div class="status-wrap">
-        <span class="badge" id="connection-badge">Connecting</span>
+        <span class="badge" id="connection-badge">CONNECTING</span>
         <p class="mono" id="runtime-clock">--</p>
       </div>
+
+      <div class="top-actions">
+        <button class="toggle" id="toggle-live">Start Live Mock</button>
+        <button class="toggle" id="toggle-theme">Theme: Blue</button>
+        <label class="speed">
+          Speed
+          <input id="speed" type="range" min="0.25" max="1.5" step="0.05" value="0.9" />
+        </label>
+      </div>
     </header>
+
+    <section class="toolbar card">
+      <div class="toolbar-item"><span>Preset</span><strong>Competition Baseline</strong></div>
+      <div class="toolbar-item"><span>Profile</span><strong>Full Panels</strong></div>
+      <div class="toolbar-item"><span>Runtime</span><strong>Mock Isolated</strong></div>
+      <div class="toolbar-item"><span>Mode</span><strong>No Robot Required</strong></div>
+    </section>
 
     <section class="grid">
       <article class="card telemetry-card">
@@ -28,22 +49,22 @@ app.innerHTML = `
         <div id="telemetry-grid" class="telemetry-grid"></div>
       </article>
 
-      <article class="card">
+      <article class="card opmodes-card">
         <h2>OpModes</h2>
         <ul id="opmodes" class="list"></ul>
       </article>
 
-      <article class="card">
+      <article class="card widgets-card">
         <h2>Widget Health</h2>
         <ul id="widgets" class="list"></ul>
       </article>
 
       <article class="card graph-card">
-        <h2>Graph (Loop Metric)</h2>
+        <h2>Graph</h2>
         <svg id="graph" viewBox="0 0 600 200" preserveAspectRatio="none" aria-label="Mock graph"></svg>
       </article>
 
-      <article class="card">
+      <article class="card field-card">
         <h2>Field State</h2>
         <svg id="field" viewBox="0 0 144 144" class="field" aria-label="Mock field"></svg>
       </article>
@@ -60,20 +81,44 @@ app.innerHTML = `
         </div>
         <div class="buttons" id="buttons"></div>
       </article>
+
+      <article class="card config-card">
+        <h2>Configurables</h2>
+        <ul id="configurables" class="list"></ul>
+      </article>
+
+      <article class="card camera-card">
+        <h2>Camera Stream</h2>
+        <div class="camera-frame">
+          <div class="scan"></div>
+          <p>Mock stream active</p>
+          <p class="subtle">Rendered locally with no robot camera input.</p>
+        </div>
+      </article>
+
+      <article class="card notifications-card">
+        <h2>Notifications</h2>
+        <ul id="notifications" class="list notifications"></ul>
+      </article>
     </section>
 
     <footer class="card footer">
-      <p>This demo uses generated mock services for telemetry, opmodes, widgets, graph, field, and gamepad state.</p>
-      <p class="subtle">Production FTC runtime in library/ and examples/ is untouched.</p>
+      <p>High-fidelity mock: Panels-style UX with deterministic data and optional live updates.</p>
+      <p class="subtle">Production FTC runtime in library/ and examples/ remains untouched.</p>
     </footer>
   </main>
 `
 
 const connectionBadge = getById<HTMLElement>("connection-badge")
 const runtimeClock = getById<HTMLElement>("runtime-clock")
+const toggleLive = getById<HTMLButtonElement>("toggle-live")
+const toggleTheme = getById<HTMLButtonElement>("toggle-theme")
+const speedInput = getById<HTMLInputElement>("speed")
 const telemetryGrid = getById<HTMLElement>("telemetry-grid")
 const opmodes = getById<HTMLElement>("opmodes")
 const widgets = getById<HTMLElement>("widgets")
+const configurables = getById<HTMLElement>("configurables")
+const notifications = getById<HTMLElement>("notifications")
 const graph = getById<SVGSVGElement>("graph")
 const field = getById<SVGSVGElement>("field")
 const leftStick = getById<HTMLElement>("left-stick")
@@ -82,10 +127,35 @@ const leftTrigger = getById<HTMLProgressElement>("left-trigger")
 const rightTrigger = getById<HTMLProgressElement>("right-trigger")
 const buttons = getById<HTMLElement>("buttons")
 
+const applyTheme = () => {
+  document.body.classList.remove("blue", "red")
+  document.body.classList.add(theme)
+}
+
+toggleLive.addEventListener("click", () => {
+  liveMode = !liveMode
+  toggleLive.textContent = liveMode ? "Pause Live Mock" : "Start Live Mock"
+})
+
+toggleTheme.addEventListener("click", () => {
+  theme = theme === "blue" ? "red" : "blue"
+  toggleTheme.textContent = `Theme: ${theme === "blue" ? "Blue" : "Red"}`
+  applyTheme()
+})
+
 const update = () => {
+  const now = performance.now()
+  const dt = now - lastTick
+  lastTick = now
+
+  if (liveMode) {
+    const speed = Number(speedInput.value)
+    service.tick(dt * speed)
+  }
+
   const snapshot = service.getSnapshot()
 
-  runtimeClock.textContent = `${snapshot.nowIso} | ${snapshot.latencyMs} ms`
+  runtimeClock.textContent = `${snapshot.nowIso} | ${snapshot.latencyMs} ms latency | ${snapshot.pingMs.toFixed(1)} ms ping`
   setConnectionBadge(snapshot.connection)
 
   telemetryGrid.innerHTML = snapshot.telemetry
@@ -106,6 +176,17 @@ const update = () => {
     )
     .join("")
 
+  configurables.innerHTML = snapshot.configurables
+    .map(
+      (entry) =>
+        `<li><span>${entry.key}</span><span class="pill ${entry.changed ? "warning" : "ok"}">${entry.changed ? "changed" : "stable"}</span><span class="mono">${entry.value}</span></li>`
+    )
+    .join("")
+
+  notifications.innerHTML = snapshot.notifications
+    .map((item) => `<li><span>${item}</span><span class="mono">${snapshot.cycleSeconds.toFixed(1)}s</span></li>`)
+    .join("")
+
   drawGraph(snapshot.graphSeries)
   drawField(snapshot.fieldPath)
 
@@ -120,8 +201,9 @@ const update = () => {
     .join("")
 }
 
-const interval = setInterval(update, 450)
+const interval = setInterval(update, 220)
 update()
+applyTheme()
 
 window.addEventListener("beforeunload", () => {
   clearInterval(interval)
@@ -155,11 +237,11 @@ function drawGraph(values: number[]) {
   graph.innerHTML = `
     <defs>
       <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
-        <stop offset="0%" stop-color="rgba(243, 179, 91, 0.8)"/>
-        <stop offset="100%" stop-color="rgba(243, 179, 91, 0)"/>
+        <stop offset="0%" stop-color="rgba(0, 161, 255, 0.85)"/>
+        <stop offset="100%" stop-color="rgba(0, 161, 255, 0)"/>
       </linearGradient>
     </defs>
-    <polyline fill="none" stroke="#f3b35b" stroke-width="3" points="${points}" />
+    <polyline fill="none" stroke="var(--accent)" stroke-width="3" points="${points}" />
   `
 }
 
@@ -168,12 +250,12 @@ function drawField(path: Point[]) {
   const current = path[0]
 
   field.innerHTML = `
-    <rect x="0" y="0" width="144" height="144" fill="#0f1414" rx="4" />
-    <rect x="6" y="6" width="132" height="132" fill="none" stroke="#35565a" stroke-dasharray="3 2" />
-    <line x1="72" y1="6" x2="72" y2="138" stroke="#274247" stroke-width="1" />
-    <line x1="6" y1="72" x2="138" y2="72" stroke="#274247" stroke-width="1" />
-    <polyline points="${pathPoints}" fill="none" stroke="#80f2ff" stroke-width="1.6" />
-    <circle cx="${current.x.toFixed(2)}" cy="${current.y.toFixed(2)}" r="3" fill="#f3b35b" />
+    <rect x="0" y="0" width="144" height="144" fill="#0d141f" rx="4" />
+    <rect x="6" y="6" width="132" height="132" fill="none" stroke="#2f4b69" stroke-dasharray="3 2" />
+    <line x1="72" y1="6" x2="72" y2="138" stroke="#2f4b69" stroke-width="1" />
+    <line x1="6" y1="72" x2="138" y2="72" stroke="#2f4b69" stroke-width="1" />
+    <polyline points="${pathPoints}" fill="none" stroke="var(--accent-soft)" stroke-width="1.8" />
+    <circle cx="${current.x.toFixed(2)}" cy="${current.y.toFixed(2)}" r="3" fill="var(--accent)" />
   `
 }
 

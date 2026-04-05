@@ -41,7 +41,7 @@
     max-width: 100%;
     padding: var(--space-2);
     border-radius: var(--radius-md);
-    background-color: rgba(33, 34, 34, 0.9);
     background-color: color-mix(in srgb, var(--bgMedium) 90%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 70%, transparent);
   }
 </style>

@@ -213,7 +213,7 @@
       </button>
     {/if}
   </div>
-  <div style="margin-left: auto;margin-right: var(--padding)">
+  <div class="actions">
     <WidgetOptions bind:widget />
   </div>
 </nav>
@@ -224,9 +224,11 @@
     align-items: center;
     gap: var(--space-2);
     padding-left: var(--panel-padding);
-    padding-top: var(--space-2);
+    padding-top: var(--space-1);
     padding-bottom: var(--space-1);
     width: 100%;
+    border-bottom: 1px solid color-mix(in srgb, var(--border-subtle) 78%, transparent);
+    background: color-mix(in srgb, var(--bgRaised) 55%, transparent);
   }
   .tabs {
     display: flex;
@@ -242,23 +244,27 @@
     all: unset;
     cursor: pointer;
     min-height: 2rem;
-    padding: 0.3em 0.72em;
-    border: 1px solid currentColor;
+    padding: 0.3em 0.75em;
+    border: 1px solid color-mix(in srgb, var(--border-subtle) 86%, white 14%);
     border-radius: var(--radius-sm);
     text-wrap: nowrap;
-    opacity: 0.65;
-    font-size: 0.92rem;
-    transition: opacity var(--d1, 120ms) ease, background-color var(--d1, 120ms) ease;
+    opacity: 0.78;
+    font-size: 0.88rem;
+    background-color: color-mix(in srgb, var(--bgDark) 45%, transparent);
+    color: color-mix(in srgb, var(--mutedText) 92%, white 8%);
+    transition:
+      opacity var(--d1, 120ms) ease,
+      background-color var(--d1, 120ms) ease,
+      border-color var(--d1, 120ms) ease;
   }
   .tab:hover {
-    opacity: 0.88;
+    opacity: 0.96;
+    border-color: color-mix(in srgb, var(--primary) 35%, var(--border-subtle));
   }
   .tab.selected {
     opacity: 1;
-    background-color: #4a4b4b;
-    background-color: color-mix(in srgb, var(--bgLight) 80%, white 20%);
-  }
-  .tab.selected {
+    color: var(--text);
+    background-color: color-mix(in srgb, var(--bgLight) 76%, #132234 24%);
     border-color: rgba(0, 91, 172, 0.55);
     border-color: color-mix(in srgb, var(--primary) 55%, transparent);
   }
@@ -274,5 +280,10 @@
     left: var(--x);
     opacity: 1;
     pointer-events: none;
+    box-shadow: var(--shadow-sm);
+  }
+  .actions {
+    margin-left: auto;
+    margin-right: var(--space-1);
   }
 </style>

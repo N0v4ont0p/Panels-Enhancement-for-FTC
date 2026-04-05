@@ -64,6 +64,8 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    color: color-mix(in srgb, var(--mutedText) 88%, white 12%);
   }
   .resize {
     position: absolute;
@@ -71,6 +73,8 @@
     bottom: var(--space-1);
   }
   .icon:hover {
-    background-color: color-mix(in srgb, var(--bgLight) 75%, white 25%);
+    background-color: color-mix(in srgb, var(--bgLight) 60%, transparent);
+    border-color: color-mix(in srgb, var(--primary) 36%, transparent);
+    color: var(--text);
   }
 </style>

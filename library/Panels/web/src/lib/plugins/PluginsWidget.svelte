@@ -37,13 +37,20 @@
   .main-buttons {
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
-    gap: 1rem;
+    margin-top: var(--space-3);
+    gap: var(--space-2);
   }
   span {
     position: absolute;
-    top: var(--padding);
-    right: var(--padding);
-    font-weight: bold;
+    top: var(--space-2);
+    right: var(--space-2);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    padding: 0.22rem 0.48rem;
+    border-radius: 999px;
+    background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+    border: 1px solid color-mix(in srgb, var(--primary) 45%, transparent);
   }
 </style>

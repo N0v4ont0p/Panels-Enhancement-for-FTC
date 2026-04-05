@@ -1,9 +1,3 @@
-/**
- * Top-level build file for ftc_app project.
- *
- * It is extraordinarily rare that you will ever need to edit this file.
- */
-
 buildscript {
     val kotlin_version by extra("2.1.20")
 
